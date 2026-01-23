@@ -41,11 +41,16 @@ Activation (σ) = makes it non-linear (ReLU, sigmoid, etc.)
 
 - But this can be done with one big step only, we don't need two steps. Thus, stacking layers don't add real expressive power.
 
-# Why non-linearity changes everything? A nonlinear (ReLU, sigmoid, tanh) adds a "bend" in the rule. 
+# Why non-linearity changes everything? 
+- A nonlinear (ReLU, sigmoid, tanh) adds a "bend" in the rule. 
 - The network is no longer forced to use only straigh-line boundaries
 - it can combine many bends to make curved / complex shapes.
 
 <img width="216" height="234" alt="image" src="https://github.com/user-attachments/assets/e08f024d-90cd-4fde-af75-966c18a1dda8" />
 
+# How does network learn? 
+- A neural network learns by adjusting its weights (parameters) so its predictions get closer to the correct answer. Think about it like turning thousands of knobs to get the correct answer.
 
+# How do we make the loss small? 
+- 
 
