@@ -65,8 +65,29 @@ Activation (σ) = makes it non-linear (ReLU, sigmoid, etc.)
 
 𝑤 ← 𝑤 − 𝜂 ⋅ ∂𝐿/∂𝑤
 
-∂w/∂L = slope of loss w.r.t that weight
-η (learning rate) = step size
+∂w/∂L = slope of loss w.r.t that weight; η (learning rate) = step size
 
 - So: to make loss smaller, step a little opposite the slope.
+
+# What is gradient descent? 
+- Gradient descent is an optimisation algorithm used to minimize the model's error by adjusting its parameters. It helps the model to learn the best possible weight for better prediction. 
+
+# How is gradient and gradient descent different? 
+- The gradient is a vector of partial derivatives showing a function's steepest ascent, like the slope of a hill; Gradient Descent is an iterative optimization algorithm that repeatedly takes steps in the opposite (negative) direction of the gradient to find the minimum (lowest point) of a cost function.
+
+# Types of gradients: 
+- It depends on how the gradient is computed / estimated during training process.
+1) True gradient
+- Compute the gradient of the loss using all training examples.
+- Less noisy, more accurate; expensive.
+
+2) Stochastic gradient (SGD):
+- Computes gradient using one example.
+- Noisy estimates of true gradient; cheap and can help in exploration.
+
+3) Mini-batch gradient:
+- Compute graadient on a small batch of examples.
+- cheaper than true gradient; but noisy than SGD
+
+- Mini-batch gradient is an estimate of the true gradient.
 
