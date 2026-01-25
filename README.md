@@ -52,5 +52,21 @@ Activation (σ) = makes it non-linear (ReLU, sigmoid, etc.)
 - A neural network learns by adjusting its weights (parameters) so its predictions get closer to the correct answer. Think about it like turning thousands of knobs to get the correct answer.
 
 # How do we make the loss small? 
-- 
+- Firstly, loss is like a penalty score, given to each neuron. This helps it to understand how off it is compared to the actual result. Just like Mean Squared Error in regression or Cross Entropy loss during classification. 
+- To reduce the loss, we have to find weights that minimize average loss over the training data.
+
+<img width="1995" height="1331" alt="image" src="https://github.com/user-attachments/assets/e19d2554-1635-470a-85d5-dcba8894b68a" />
+
+- The slope of the graph (x, y axis: different weight settings, height: loss value) will tell use which way is downhill and help us understand the global minima. 
+- The direction of downhill is given by the gradient.
+- Gradient: A verctor slope; if you increase this weight by a tiny bit, does loss go up or down, and by how much is given by gradient.
+
+ Then you update weights like:
+
+𝑤 ← 𝑤 − 𝜂 ⋅ ∂𝐿/∂𝑤
+
+∂w/∂L = slope of loss w.r.t that weight
+η (learning rate) = step size
+
+- So: to make loss smaller, step a little opposite the slope.
 
