@@ -77,11 +77,11 @@ Activation (σ) = makes it non-linear (ReLU, sigmoid, etc.)
 
 # Types of gradients: 
 - It depends on how the gradient is computed / estimated during training process.
-1) True gradient
+1) True gradient descent / Batch Gradient Descent:
 - Compute the gradient of the loss using all training examples.
 - Less noisy, more accurate; expensive.
 
-2) Stochastic gradient (SGD):
+2) Stochastic gradient descent (SGD):
 - Computes gradient using one example.
 - Noisy estimates of true gradient; cheap and can help in exploration.
 
@@ -91,3 +91,10 @@ Activation (σ) = makes it non-linear (ReLU, sigmoid, etc.)
 
 - Mini-batch gradient is an estimate of the true gradient.
 
+# The learning loop
+- Forward pass: Feed an input through the network -> get a prediction.
+- Compute loss: Compare prediction vs trugh -> Produce a single number that says "how bad".
+- Backpropagation: Figure out how much each weight contributed to the error.
+- Update weights (gradient descent): Nudge each weight in the direction that reduces the loss.
+
+- This step repeats over many iterations -> loss goes down -> model improves. 
