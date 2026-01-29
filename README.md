@@ -97,4 +97,63 @@ Activation (σ) = makes it non-linear (ReLU, sigmoid, etc.)
 - Backpropagation: Figure out how much each weight contributed to the error.
 - Update weights (gradient descent): Nudge each weight in the direction that reduces the loss.
 
-- This step repeats over many iterations -> loss goes down -> model improves. 
+- This step repeats over many iterations -> loss goes down -> model improves.
+
+# Problem solvong
+- Now that we know how the network works, let's see it in action. We have input x (numbers) and the output we want y (a class, number, sequence). A neural network learn a function f(x) ≈ y by tuning weights using backprop.
+
+- **Artificial Neural Network (ANN)**:
+- Ann is basically a fully-connected (dense) neural network, also called an MLP (Multi-Layer Perceptron).
+- Input layer -> Hiiden layer(s) -> Output layer: Each neuron connects to all neurons in the next layer.
+
+- Pros:
+- Tabular data; simple signals when the structure is not spatial.
+
+- Limitations:
+- If images are given as input, the nearby pixels are lost
+- A lot of parameters (overfitting risk)
+- It doesn't scale well to high-res images.
+
+# Other types of NN: 
+1) Feedforward Network
+- No loops, information flows one way. Statis input -> Output
+
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/0bb9dfb0-e4f6-422c-93f6-1084ea89a2f6" />
+
+2) Recurrent Neural Network (RNN):
+- Built for sequences (time series, text)
+- Has feedback connection (memory)
+- Processes input step-by-step over time
+
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/6795ee31-075f-46d1-9d09-e6d3646c4b12" />
+
+The fundamental processing unit in RNN is a Recurrent Unit. They hold a hidden state that maintains information about previous inputs in a sequence. Recurrent units can "remember" information from prior steps by feeding back their hidden state, allowing them to capture dependencies across time.
+
+In RNNs the hidden state Hi is calculated for every input Xi to retain sequential dependencies. The computations follow these core formulas:
+
+1. Hidden State Calculation:
+
+h = σ(U⋅X+W⋅ht−1+B)
+
+Here:
+h represents the current hidden state.
+U and W are weight matrices.
+B is the bias.
+
+2. Output Calculation:
+Y=O(V⋅h+C)
+
+The output 
+Y is calculated by applying O an activation function to the weighted hidden state where 
+V and C represent weights and bias.
+
+3. Overall Function:
+
+Y=f(X,h,W,U,V,B,C)
+ 
+This function defines the entire RNN operation where the state matrix 
+S holds each element si representing the network's state at each time step i.
+
+How does RNN work?
+At each time step RNNs process units with a fixed activation function. These units have an internal hidden state that acts as memory that retains information from previous time steps. This memory allows the network to store past knowledge and adapt based on new inputs.
+
