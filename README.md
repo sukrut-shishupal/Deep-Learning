@@ -157,3 +157,11 @@ S holds each element si representing the network's state at each time step i.
 How does RNN work?
 At each time step RNNs process units with a fixed activation function. These units have an internal hidden state that acts as memory that retains information from previous time steps. This memory allows the network to store past knowledge and adapt based on new inputs.
 
+3) Autoencoders:
+- Learn to compress and reconstruct data:
+- (encoder) Input -> compact presentation -> Reconstruction (decoder)
+
+<img width="647" height="400" alt="image" src="https://github.com/user-attachments/assets/b8c53cb9-441b-425d-876a-c6b5fdb7c472" />
+
+Use case: Denoising, anomaly detection, representation learning. 
+
