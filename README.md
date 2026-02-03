@@ -165,3 +165,14 @@ At each time step RNNs process units with a fixed activation function. These uni
 
 Use case: Denoising, anomaly detection, representation learning. 
 
+4) Graph Neural Network (GNN):
+- Built for data that is node and edges (graph)
+- Use cases: Molecules; social network; knowledge graphs
+
+5) Transformers:
+- Originally used for language recognition, not used for LLMs
+- Idea: Attention lets every token relate to every other token.
+- Use case: LLMs, Multimodal models.
+
+<img width="824" height="690" alt="image" src="https://github.com/user-attachments/assets/67a1de9c-2f5a-4520-bb72-7e051ef77ae3" />
+
