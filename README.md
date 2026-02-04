@@ -176,3 +176,17 @@ Use case: Denoising, anomaly detection, representation learning.
 
 <img width="824" height="690" alt="image" src="https://github.com/user-attachments/assets/67a1de9c-2f5a-4520-bb72-7e051ef77ae3" />
 
+# Convolutional Neural Network (CNN)
+- Images are 2D structures, pixels form edges/textures. Patterns can repeat anywhere on the image, can we distingusih main object from the background?
+
+- Goal: 1) Detect local patterns, 2) reuse detectors across the image, 3) Build up from simple and then to complex features
+
+- Instead of connecting every pixel to every neuron, CNN uses small filters (kernals) like 3x3 to:
+1) Filter slides over the image
+2) Compute dot product at each position
+3) Get a feature map
+
+- The basic idea is that, one filter learns vertical edges, other learns horizontal edges and next checkerboard texture, etc.
+- This is powerful because it focuses on nearby pixels, weight sharing -> same filter used everywhere means fewer parameters, if a feature appears anywhere, it can be detected.
+
+
