@@ -189,4 +189,61 @@ Use case: Denoising, anomaly detection, representation learning.
 - The basic idea is that, one filter learns vertical edges, other learns horizontal edges and next checkerboard texture, etc.
 - This is powerful because it focuses on nearby pixels, weight sharing -> same filter used everywhere means fewer parameters, if a feature appears anywhere, it can be detected.
 
+# ReLU (Rectified Linear Unit): 
+- It is a efficient activation function that introduces non-linearity by outputting the input directly if it is positive, and zero otherwise (f(x) = max(0,x)).
+- It mitigates vanishing gradient problem and enables faster, more effiective training of NN to sigmoid or tanh functions.
+- Keeps positive responses only.
+
+# Downsampling (Pooling and Strided Convs)
+- Reduces spatial size (224x224 -> 112x112)
+- Keeps important info; reduced computation; increases robustness to small shifts
+
+# Stacking layers (Hierarchy)
+- They're arranged in such a way that every layer picksup certain characterisitcs.
+- Early conv layer: edge, corners
+- Mid layers: Textures, shapes
+- Deep layers: Parts (eyes, wheels)
+- Final layers: identify object
+
+# Example: 
+
+- We’ll start with a tiny 4×4 “image” (just numbers):
+
+𝑋 = [ 1 2 0 3
+      4 5 1 2
+      0 1 3 1
+      2 2 1 0]
+
+
+- Step 1: Convolution (a filter slides over the image)
+
+Pick a 2×2 filter (kernel):
+
+𝐾 = [ 1 −1
+      1 −1]
+
+
+Now slide it over the image (stride 1, no padding).
+Each output cell = sum of (patch × kernel).
+
+Example: top-left output
+
+Top-left 2×2 patch is:
+
+[ 1 2
+  4 5]
+
+
+Multiply elementwise with 𝐾
+K and sum: (1⋅1)+(2⋅−1)+(4⋅1)+(5⋅−1) = 1−2+4−5=−2
+
+Do this everywhere → you get a 3×3 feature map:
+
+X∗K= [−2 6 -4
+      −2 2  1
+      −1 -1 3]
+	​
+- Interpretation: this filter is like “left-vs-right difference” inside each 2×2 patch (a simple edge-ish detector).​
+
+	​
 
