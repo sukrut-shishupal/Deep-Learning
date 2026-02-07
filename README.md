@@ -245,5 +245,40 @@ X∗K= [−2 6 -4
 	​
 - Interpretation: this filter is like “left-vs-right difference” inside each 2×2 patch (a simple edge-ish detector).​
 
+Step 2: Nonlinearity (ReLU)
+
+ReLU means: replace negatives with 0.
+
+ReLU(X∗K)= [ 0 6 0
+ 			0 2 1
+			0 0 3]
 	​
+
+- Why this matters: it lets the network build nonlinear and more complex patterns, layer after layer.
+
+- Step 3: Pooling (downsample)
+- Use 2×2 max pooling (stride 1 here, just for the tiny example).
+- Take the max value in each 2×2 block.
+
+Result becomes 2×2:
+
+MaxPool=[ 6 6
+		  2​ 3]
+
+- Meaning: “keep the strongest detected feature in each region.”
+
+- Step 4: Stack another layer (this is where “deep” begins)
+
+- Now apply another filter on this pooled output.
+
+Let:
+
+K2 = [ 1 1 
+	  -1 0]
+	​
+- Since the pooled map is 2×2, this produces one number:
+
+6⋅1+6⋅1+2⋅(−1)+3⋅0=6+6−2+0=10
+
+- This second layer is combining the first-layer features into a “higher-level” signal.​
 
